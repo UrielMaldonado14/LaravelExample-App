@@ -17,7 +17,7 @@ jobs:
       - name: Set up PHP
         uses: shivammathur/setup-php@v2
         with:
-          php-version: '8.2.12'
+          php-version: '8.3'
           extensions: mbstring, intl, pdo_mysql
           coverage: none
           tools: composer
@@ -30,11 +30,14 @@ jobs:
           restore-keys: |
             ${{ runner.os }}-php-
 
+      - name: Install Composer dependencies
+        run: composer install
+
       - name: Set up the database
         run: |
-         cp .env.example .env
-         php artisan key:generate
-         php artisan migrate --env=testing
+          cp .env.example .env
+          php artisan key:generate
+          php artisan migrate --env=testing
 
       - name: Install dependencies
         run: composer install --no-progress --prefer-dist --no-interaction
