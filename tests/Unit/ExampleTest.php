@@ -24,3 +24,4 @@ class ExampleTest extends TestCase
         $this->assertGreaterThan(5, $controller->addition(5, 6));
     }
 }
+
