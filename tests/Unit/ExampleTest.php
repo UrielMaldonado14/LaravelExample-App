@@ -17,11 +17,10 @@ class ExampleTest extends TestCase
 
     public function test_int_addition(): void
     {
-        $controller = new OperationsController();
+        $controller = new OperationsController;
 
         $this->assertIsInt($controller->addition(5, 6));
         $this->assertNotNull($controller->addition(5, 6));
         $this->assertGreaterThan(5, $controller->addition(5, 6));
     }
 }
-
