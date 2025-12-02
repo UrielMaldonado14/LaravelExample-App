@@ -2,8 +2,8 @@
 
 namespace Tests\Unit;
 
-use PHPUnit\Framework\TestCase;
 use App\Http\Controllers\OperationsController;
+use PHPUnit\Framework\TestCase;
 
 class ExampleTest extends TestCase
 {
@@ -18,8 +18,10 @@ class ExampleTest extends TestCase
     public function test_int_addition(): void
     {
         $controller = new OperationsController();
+
         $this->assertIsInt($controller->addition(5, 6));
         $this->assertNotNull($controller->addition(5, 6));
         $this->assertGreaterThan(5, $controller->addition(5, 6));
     }
 }
+
