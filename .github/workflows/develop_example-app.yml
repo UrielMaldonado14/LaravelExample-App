@@ -63,5 +63,5 @@ jobs:
         with:
           app-name: 'Example-App'
           slot-name: 'Production'
-          package: .
+          package: ./
           
